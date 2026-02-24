@@ -17,22 +17,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "gcoordinator → Bambu Lab A1 Converter",
+  title: "G-code Converter",
   description:
-    "gcoordinatorで生成したG-codeをBambu Lab A1用に変換するWebアプリ。プレビュー、安全性チェック、設定調整を行い、そのままSDカードに転送して印刷できます。",
+    "G-codeをBambu Lab A1用に変換するWebアプリ。プレビュー、安全性チェック、設定調整を行い、そのままSDカードに転送して印刷できます。",
   openGraph: {
-    title: "gcoordinator → Bambu Lab A1 Converter",
+    title: "G-code Converter",
     description:
-      "Convert gcoordinator G-code for Bambu Lab A1. Preview, validate, adjust settings, and download ready-to-print files.",
+      "Convert G-code for Bambu Lab A1. Preview, validate, adjust settings, and download ready-to-print files.",
     type: "website",
     locale: "ja_JP",
-    siteName: "gcode2bambu",
+    siteName: "G-code Converter",
   },
   twitter: {
     card: "summary",
-    title: "gcoordinator → Bambu Lab A1 Converter",
+    title: "G-code Converter",
     description:
-      "Convert gcoordinator G-code for Bambu Lab A1. Preview, validate, adjust settings, and download.",
+      "Convert G-code for Bambu Lab A1. Preview, validate, adjust settings, and download.",
   },
 };
 
@@ -47,10 +47,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <div className="flex min-h-screen flex-col">
+          <div className="flex h-screen flex-col overflow-hidden">
             <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <main className="flex-1 overflow-y-auto pb-8">{children}</main>
           </div>
           <StatusBar />
         </Providers>

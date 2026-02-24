@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export type Locale = "ja" | "en" | "zh-CN" | "ko" | "es";
+export type Locale = "ja" | "en" | "zh-CN" | "ko" | "es" | "de" | "fr";
 
 export const LOCALE_LIST: { code: Locale; name: string; flag: string }[] = [
   { code: "ja", name: "日本語", flag: "🇯🇵" },
@@ -11,6 +11,8 @@ export const LOCALE_LIST: { code: Locale; name: string; flag: string }[] = [
   { code: "zh-CN", name: "简体中文", flag: "🇨🇳" },
   { code: "ko", name: "한국어", flag: "🇰🇷" },
   { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
 ];
 
 interface LocaleStore {

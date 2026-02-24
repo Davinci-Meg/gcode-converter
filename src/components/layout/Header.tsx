@@ -33,12 +33,10 @@ export function Header() {
             </svg>
           </div>
           <span className="hidden font-mono text-sm font-semibold tracking-tight sm:inline-block">
-            <span className="text-foreground">gcoordinator</span>
-            <span className="mx-1.5 text-muted-foreground/60">&rarr;</span>
-            <span className="text-green-500">Bambu Lab A1</span>
+            <span className="text-green-500">G-code Converter</span>
           </span>
           <span className="font-mono text-sm font-semibold tracking-tight sm:hidden">
-            <span className="text-green-500">gcode2bambu</span>
+            <span className="text-green-500">G-code Converter</span>
           </span>
         </Link>
 

@@ -19,7 +19,7 @@ const zhCN: Translations = {
 
   // -- Footer --
   footer: {
-    copyright: "gcode2bambu. 与 Bambu Lab 无关。",
+    copyright: "与 Bambu Lab 无关。",
     disclaimer: "使用转换后的G-code风险自负。打印前请务必检查输出结果。",
     aiTranslationNote: "日语以外的翻译由AI生成。",
   },
@@ -169,7 +169,7 @@ const zhCN: Translations = {
   // -- About Page --
   about: {
     title: "About",
-    subtitle: "关于 gcoordinator → Bambu Lab A1 Converter",
+    subtitle: "关于 G-code Converter",
     projectOverview: "项目概述",
     projectDesc: "连接gcoordinator与Bambu Lab A1的转换工具",
     projectP1: "<b>gcoordinator</b>是一款基于坐标变换的独特方法生成3D打印G-code的工具。与传统切片软件不同，它利用数学坐标变换来实现复杂的造型模式。",

@@ -13,6 +13,8 @@ const loaders: Record<Locale, () => Translations> = {
   "zh-CN": () => require("./locales/zh-CN").default,
   ko: () => require("./locales/ko").default,
   es: () => require("./locales/es").default,
+  de: () => require("./locales/de").default,
+  fr: () => require("./locales/fr").default,
 };
 
 const cache = new Map<Locale, Translations>();

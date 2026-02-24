@@ -17,7 +17,7 @@ const ja = {
 
   // -- Footer --
   footer: {
-    copyright: "gcode2bambu. Bambu Lab とは無関係です。",
+    copyright: "Bambu Lab とは無関係です。",
     disclaimer: "変換されたG-codeの使用は自己責任です。印刷前に必ず出力を確認してください。",
     aiTranslationNote: "日本語以外の翻訳はAIによるものです。",
   },
@@ -167,7 +167,7 @@ const ja = {
   // -- About Page --
   about: {
     title: "About",
-    subtitle: "gcoordinator → Bambu Lab A1 Converterについて",
+    subtitle: "G-code Converterについて",
     projectOverview: "プロジェクト概要",
     projectDesc: "gcoordinatorとBambu Lab A1をつなぐ変換ツール",
     projectP1: "<b>gcoordinator</b>は、座標変換ベースの独自アプローチで3Dプリント用のG-codeを生成するツールです。従来のスライサーとは異なり、数学的な座標変換を活用して複雑な造形パターンを実現します。",

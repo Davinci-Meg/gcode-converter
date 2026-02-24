@@ -19,7 +19,7 @@ const es: Translations = {
 
   // -- Footer --
   footer: {
-    copyright: "gcode2bambu. No afiliado con Bambu Lab.",
+    copyright: "No afiliado con Bambu Lab.",
     disclaimer: "El uso del G-code convertido es bajo su propia responsabilidad. Verifique siempre la salida antes de imprimir.",
     aiTranslationNote: "Las traducciones fuera del japonés son generadas por IA.",
   },
@@ -169,7 +169,7 @@ const es: Translations = {
   // -- About Page --
   about: {
     title: "About",
-    subtitle: "Acerca de gcoordinator → Bambu Lab A1 Converter",
+    subtitle: "Acerca de G-code Converter",
     projectOverview: "Descripción del proyecto",
     projectDesc: "Herramienta de conversión que conecta gcoordinator con Bambu Lab A1",
     projectP1: "<b>gcoordinator</b> es una herramienta que genera G-code para impresión 3D mediante un enfoque único basado en transformaciones de coordenadas. A diferencia de los laminadores convencionales, utiliza transformaciones matemáticas de coordenadas para lograr patrones de modelado complejos.",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Footer } from "@/components/layout/Footer";
 import {
   Card,
   CardHeader,
@@ -177,6 +178,7 @@ export default function GuidePage() {
           {t.guide.startConverting}
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

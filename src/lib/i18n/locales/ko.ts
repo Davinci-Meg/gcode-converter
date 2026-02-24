@@ -19,7 +19,7 @@ const ko: Translations = {
 
   // -- Footer --
   footer: {
-    copyright: "gcode2bambu. Bambu Lab과는 무관합니다.",
+    copyright: "Bambu Lab과는 무관합니다.",
     disclaimer: "변환된 G-code의 사용은 본인 책임입니다. 인쇄 전에 반드시 출력을 확인하세요.",
     aiTranslationNote: "일본어 이외의 번역은 AI에 의해 생성되었습니다.",
   },
@@ -169,7 +169,7 @@ const ko: Translations = {
   // -- About Page --
   about: {
     title: "About",
-    subtitle: "gcoordinator → Bambu Lab A1 Converter에 대하여",
+    subtitle: "G-code Converter에 대하여",
     projectOverview: "프로젝트 개요",
     projectDesc: "gcoordinator와 Bambu Lab A1을 연결하는 변환 도구",
     projectP1: "<b>gcoordinator</b>는 좌표 변환 기반의 독자적인 접근 방식으로 3D 프린트용 G-code를 생성하는 도구입니다. 기존 슬라이서와 달리 수학적 좌표 변환을 활용하여 복잡한 조형 패턴을 구현합니다.",

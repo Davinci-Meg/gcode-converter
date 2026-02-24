@@ -7,12 +7,12 @@ export function Footer() {
   const t = useTranslation();
 
   return (
-    <footer className="border-t border-border/60 bg-background/50">
+    <footer className="border-t border-border/60 bg-background/50 pb-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
         {/* Copyright & disclaimer */}
         <div className="flex flex-col items-center gap-1 sm:items-start">
           <p className="font-mono text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} {t.footer.copyright}
+            &copy; {new Date().getFullYear()} Megumu Isshiki. {t.footer.copyright}
           </p>
           <p className="text-xs text-muted-foreground/60">
             {t.footer.disclaimer}

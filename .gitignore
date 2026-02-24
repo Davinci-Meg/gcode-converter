@@ -44,3 +44,5 @@ next-env.d.ts
 /test-results/
 e2e-result.png
 e2e-screenshot.png
+
+.vercel

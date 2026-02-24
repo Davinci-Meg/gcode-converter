@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Footer } from "@/components/layout/Footer";
 import {
   Card,
   CardHeader,
@@ -229,6 +230,7 @@ export default function AboutPage() {
           {t.about.backToConverter}
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

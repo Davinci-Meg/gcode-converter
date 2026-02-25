@@ -58,6 +58,8 @@ const ja = {
 
   // -- Print Settings --
   print: {
+    printerModel: "プリンターモデル",
+    selectPrinter: "プリンターを選択",
     maxSpeed: "最大印刷速度",
     speedUnit: "mm/s",
     speedHint: "フィラメント種類に応じた速度制限を適用します",
@@ -80,14 +82,14 @@ const ja = {
     reset: "リセット",
     startPlaceholder: "デフォルトの開始 G-code を使用します...",
     endPlaceholder: "デフォルトの終了 G-code を使用します...",
-    hint: "空欄のままにすると、デフォルトの Bambu Lab A1 G-code が使用されます。カスタム G-code を入力すると、デフォルトのテンプレートが上書きされます。",
+    hint: "空欄のままにすると、選択したプリンターのデフォルト G-code が使用されます。カスタム G-code を入力すると、デフォルトのテンプレートが上書きされます。",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "変換中...",
     reconvert: "再変換",
-    convertForBambu: "Bambu A1 用に変換",
+    convertForBambu: "Bambu用に変換",
     download: "ダウンロード",
   },
 

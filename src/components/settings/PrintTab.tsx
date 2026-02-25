@@ -4,7 +4,8 @@ import { useCallback } from "react";
 import { Crosshair } from "lucide-react";
 import { useSettingsStore } from "@/stores/useSettingsStore";
 import { useGCodeStore } from "@/stores/useGCodeStore";
-import { bambuA1Profile } from "@/lib/printer-profiles/bambu-a1";
+import { getPrinterProfile, printerList } from "@/lib/printer-profiles";
+import type { PrinterId } from "@/lib/printer-profiles";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
@@ -12,7 +13,9 @@ import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -39,16 +42,43 @@ function calcCenterOffsets(
   };
 }
 
+/** Group printer list by series */
+const printerGroups = printerList.reduce(
+  (acc, p) => {
+    if (!acc[p.series]) acc[p.series] = [];
+    acc[p.series].push(p);
+    return acc;
+  },
+  {} as Record<string, typeof printerList>
+);
+
+const seriesLabels: Record<string, string> = {
+  A: "A Series",
+  P: "P Series",
+  X: "X Series",
+};
+
 export function PrintTab() {
   const t = useTranslation();
+  const printerId = useSettingsStore((s) => s.printerId);
   const maxSpeed = useSettingsStore((s) => s.maxSpeed);
   const nozzleDiameter = useSettingsStore((s) => s.nozzleDiameter);
   const offsetX = useSettingsStore((s) => s.offsetX);
   const offsetY = useSettingsStore((s) => s.offsetY);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
+  const setPrinterId = useSettingsStore((s) => s.setPrinterId);
 
   const stats = useGCodeStore((s) => s.stats);
   const isParsingComplete = useGCodeStore((s) => s.isParsingComplete);
+
+  const profile = getPrinterProfile(printerId);
+
+  const handlePrinterChange = useCallback(
+    (value: string) => {
+      setPrinterId(value as PrinterId);
+    },
+    [setPrinterId]
+  );
 
   const handleMaxSpeedSlider = useCallback(
     (value: number[]) => {
@@ -98,11 +128,11 @@ export function PrintTab() {
     if (!stats) return;
     const { offsetX, offsetY } = calcCenterOffsets(
       stats.boundingBox,
-      bambuA1Profile.buildVolume
+      profile.buildVolume
     );
     updateSetting("offsetX", offsetX);
     updateSetting("offsetY", offsetY);
-  }, [stats, updateSetting]);
+  }, [stats, updateSetting, profile.buildVolume]);
 
   // Preview: show where the model will end up after offset
   const modelInfo = stats
@@ -114,7 +144,7 @@ export function PrintTab() {
         const afterMaxX = bb.max.x + offsetX;
         const afterMinY = bb.min.y + offsetY;
         const afterMaxY = bb.max.y + offsetY;
-        const bv = bambuA1Profile.buildVolume;
+        const bv = profile.buildVolume;
         const fits =
           afterMinX >= 0 &&
           afterMaxX <= bv.x &&
@@ -124,8 +154,32 @@ export function PrintTab() {
       })()
     : null;
 
+  const bv = profile.buildVolume;
+
   return (
     <div className="space-y-4">
+      {/* Printer Model Selector */}
+      <div className="space-y-2">
+        <Label htmlFor="printer-model">{t.print.printerModel}</Label>
+        <Select value={printerId} onValueChange={handlePrinterChange}>
+          <SelectTrigger id="printer-model" className="w-full">
+            <SelectValue placeholder={t.print.selectPrinter} />
+          </SelectTrigger>
+          <SelectContent>
+            {Object.entries(printerGroups).map(([series, printers]) => (
+              <SelectGroup key={series}>
+                <SelectLabel>{seriesLabels[series] ?? series}</SelectLabel>
+                {printers.map((p) => (
+                  <SelectItem key={p.id} value={p.id}>
+                    {p.name}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
       {/* Max Print Speed */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
@@ -262,7 +316,7 @@ export function PrintTab() {
           {t.print.buildVolume}
         </p>
         <p className="text-foreground text-sm font-semibold">
-          {t.print.buildVolumeSpec}
+          {profile.name}: {bv.x} x {bv.y} x {bv.z} mm
         </p>
       </div>
     </div>

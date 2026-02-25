@@ -73,6 +73,7 @@ export interface ValidationWarning {
 }
 
 export interface ConversionOptions {
+  printerId: string;
   nozzleTemp: number;
   bedTemp: number;
   maxSpeed: number;

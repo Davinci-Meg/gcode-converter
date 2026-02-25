@@ -4,6 +4,7 @@ import type { ConversionOptions } from "../types";
 
 function createDefaultOptions(overrides: Partial<ConversionOptions> = {}): ConversionOptions {
   return {
+    printerId: "bambu-a1",
     nozzleTemp: 200,
     bedTemp: 60,
     maxSpeed: 300,

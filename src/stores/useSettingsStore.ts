@@ -3,9 +3,10 @@
 import { create } from "zustand";
 import type { FilamentType } from "@/lib/filament-presets/types";
 import { getFilamentPreset } from "@/lib/filament-presets/presets";
+import type { PrinterId } from "@/lib/printer-profiles";
 
 interface SettingsStore {
-  printerId: string;
+  printerId: PrinterId;
   filamentType: FilamentType;
   nozzleTemp: number;
   bedTemp: number;
@@ -17,6 +18,7 @@ interface SettingsStore {
   customEndGCode: string | null;
 
   // Actions
+  setPrinterId: (id: PrinterId) => void;
   setFilamentType: (type: FilamentType) => void;
   applyPreset: (type: FilamentType) => void;
   updateSetting: <K extends keyof SettingsStore>(
@@ -29,7 +31,7 @@ interface SettingsStore {
 const plaPreset = getFilamentPreset("PLA");
 
 const defaultSettings = {
-  printerId: "bambu-a1",
+  printerId: "bambu-a1" as PrinterId,
   filamentType: "PLA" as FilamentType,
   nozzleTemp: plaPreset.nozzleTemp,
   bedTemp: plaPreset.bedTemp,
@@ -43,6 +45,15 @@ const defaultSettings = {
 
 export const useSettingsStore = create<SettingsStore>((set) => ({
   ...defaultSettings,
+
+  setPrinterId: (id) =>
+    set({
+      printerId: id,
+      customStartGCode: null,
+      customEndGCode: null,
+      offsetX: 0,
+      offsetY: 0,
+    }),
 
   setFilamentType: (type) =>
     set({ filamentType: type }),

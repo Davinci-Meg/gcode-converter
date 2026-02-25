@@ -60,6 +60,8 @@ const ko: Translations = {
 
   // -- Print Settings --
   print: {
+    printerModel: "프린터 모델",
+    selectPrinter: "프린터 선택",
     maxSpeed: "최대 인쇄 속도",
     speedUnit: "mm/s",
     speedHint: "필라멘트 종류에 따른 속도 제한을 적용합니다",
@@ -82,14 +84,14 @@ const ko: Translations = {
     reset: "초기화",
     startPlaceholder: "기본 시작 G-code를 사용합니다...",
     endPlaceholder: "기본 종료 G-code를 사용합니다...",
-    hint: "비워 두면 기본 Bambu Lab A1 G-code가 사용됩니다. 사용자 정의 G-code를 입력하면 기본 템플릿이 덮어씌워집니다.",
+    hint: "비워 두면 선택한 프린터의 기본 G-code가 사용됩니다. 사용자 정의 G-code를 입력하면 기본 템플릿이 덮어씌워집니다.",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "변환 중...",
     reconvert: "재변환",
-    convertForBambu: "Bambu A1용으로 변환",
+    convertForBambu: "Bambu용으로 변환",
     download: "다운로드",
   },
 

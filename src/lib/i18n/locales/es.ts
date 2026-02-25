@@ -60,6 +60,8 @@ const es: Translations = {
 
   // -- Print Settings --
   print: {
+    printerModel: "Modelo de impresora",
+    selectPrinter: "Seleccionar impresora",
     maxSpeed: "Velocidad máxima de impresión",
     speedUnit: "mm/s",
     speedHint: "Aplica un límite de velocidad según el tipo de filamento",
@@ -82,14 +84,14 @@ const es: Translations = {
     reset: "Restablecer",
     startPlaceholder: "Se utilizará el G-code de inicio predeterminado...",
     endPlaceholder: "Se utilizará el G-code de fin predeterminado...",
-    hint: "Si se deja en blanco, se utilizará el G-code predeterminado de Bambu Lab A1. Al ingresar un G-code personalizado, se sobrescribirá la plantilla predeterminada.",
+    hint: "Si se deja en blanco, se utilizará el G-code predeterminado de la impresora seleccionada. Al ingresar un G-code personalizado, se sobrescribirá la plantilla predeterminada.",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "Convirtiendo...",
     reconvert: "Reconvertir",
-    convertForBambu: "Convertir para Bambu A1",
+    convertForBambu: "Convertir para Bambu",
     download: "Descargar",
   },
 

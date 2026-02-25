@@ -60,6 +60,8 @@ const en: Translations = {
 
   // -- Print Settings --
   print: {
+    printerModel: "Printer model",
+    selectPrinter: "Select printer",
     maxSpeed: "Max print speed",
     speedUnit: "mm/s",
     speedHint: "Applies a speed limit based on the filament type",
@@ -82,14 +84,14 @@ const en: Translations = {
     reset: "Reset",
     startPlaceholder: "Uses default start G-code...",
     endPlaceholder: "Uses default end G-code...",
-    hint: "Leave empty to use the default Bambu Lab A1 G-code. Entering custom G-code will override the default template.",
+    hint: "Leave empty to use the default G-code for the selected printer. Entering custom G-code will override the default template.",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "Converting...",
     reconvert: "Reconvert",
-    convertForBambu: "Convert for Bambu A1",
+    convertForBambu: "Convert for Bambu",
     download: "Download",
   },
 

@@ -60,6 +60,8 @@ const zhCN: Translations = {
 
   // -- Print Settings --
   print: {
+    printerModel: "打印机型号",
+    selectPrinter: "选择打印机",
     maxSpeed: "最大打印速度",
     speedUnit: "mm/s",
     speedHint: "根据耗材类型应用速度限制",
@@ -82,14 +84,14 @@ const zhCN: Translations = {
     reset: "重置",
     startPlaceholder: "使用默认的起始 G-code...",
     endPlaceholder: "使用默认的结束 G-code...",
-    hint: "留空时将使用默认的 Bambu Lab A1 G-code。输入自定义 G-code 将覆盖默认模板。",
+    hint: "留空时将使用所选打印机的默认 G-code。输入自定义 G-code 将覆盖默认模板。",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "转换中...",
     reconvert: "重新转换",
-    convertForBambu: "转换为 Bambu A1 格式",
+    convertForBambu: "转换为 Bambu 格式",
     download: "下载",
   },
 

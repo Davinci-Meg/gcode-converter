@@ -5,7 +5,7 @@ import { useGCodeStore } from "@/stores/useGCodeStore";
 import { useSettingsStore } from "@/stores/useSettingsStore";
 import { convertGCode } from "@/lib/gcode/converter";
 import { validateGCode } from "@/lib/gcode/validator";
-import { bambuA1Profile } from "@/lib/printer-profiles/bambu-a1";
+import { getPrinterProfile } from "@/lib/printer-profiles";
 import type { ConversionOptions } from "@/lib/gcode/types";
 
 /**
@@ -36,6 +36,7 @@ export function useGCodeConverter() {
       const settings = useSettingsStore.getState();
 
       const options: ConversionOptions = {
+        printerId: settings.printerId,
         nozzleTemp: settings.nozzleTemp,
         bedTemp: settings.bedTemp,
         maxSpeed: settings.maxSpeed,
@@ -46,8 +47,9 @@ export function useGCodeConverter() {
         customEndGCode: settings.customEndGCode,
       };
 
+      const profile = getPrinterProfile(settings.printerId);
       const converted = convertGCode(rawContent, options);
-      const warnings = validateGCode(converted, bambuA1Profile);
+      const warnings = validateGCode(converted, profile);
 
       setConvertedContent(converted);
       setWarnings(warnings);

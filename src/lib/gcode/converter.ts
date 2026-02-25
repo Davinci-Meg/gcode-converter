@@ -1,6 +1,7 @@
 import type { ConversionOptions } from "./types";
-import { generateStartGCode } from "../templates/start-gcode/bambu-a1";
-import { generateEndGCode } from "../templates/end-gcode/bambu-a1";
+import { getPrinterProfile } from "../printer-profiles";
+import { generateStartGCode } from "../templates/start-gcode";
+import { generateEndGCode } from "../templates/end-gcode";
 
 /**
  * Regex that matches G0 or G1 commands (case-insensitive).
@@ -90,7 +91,7 @@ function processLine(
 }
 
 /**
- * Convert raw G-code for the Bambu Lab A1 printer.
+ * Convert raw G-code for a Bambu Lab printer.
  *
  * Tracks G90/G91 mode so that offsets are only applied to absolute coordinates.
  * Relative (G91) moves are passed through unchanged since their values are deltas.
@@ -99,11 +100,13 @@ export function convertGCode(
   rawGCode: string,
   options: ConversionOptions
 ): string {
+  const profile = getPrinterProfile(options.printerId);
+
   const startGCode =
     options.customStartGCode ??
-    generateStartGCode(options.nozzleTemp, options.bedTemp);
+    generateStartGCode(options.nozzleTemp, options.bedTemp, profile);
 
-  const endGCode = options.customEndGCode ?? generateEndGCode();
+  const endGCode = options.customEndGCode ?? generateEndGCode(profile);
 
   const lines = rawGCode.split(/\r?\n/);
 

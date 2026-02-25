@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "G-code Converter",
   description:
-    "G-codeをBambu Lab A1用に変換するWebアプリ。プレビュー、安全性チェック、設定調整を行い、そのままSDカードに転送して印刷できます。",
+    "G-codeをBambu Labプリンター用に変換するWebアプリ。A1, A1 Mini, P1P, P1S, X1 Carbon, X1Eに対応。プレビュー、安全性チェック、設定調整を行い、そのままSDカードに転送して印刷できます。",
   openGraph: {
     title: "G-code Converter",
     description:
-      "Convert G-code for Bambu Lab A1. Preview, validate, adjust settings, and download ready-to-print files.",
+      "Convert G-code for Bambu Lab printers (A1, A1 Mini, P1P, P1S, X1 Carbon, X1E). Preview, validate, adjust settings, and download ready-to-print files.",
     type: "website",
     locale: "ja_JP",
     siteName: "G-code Converter",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "G-code Converter",
     description:
-      "Convert G-code for Bambu Lab A1. Preview, validate, adjust settings, and download.",
+      "Convert G-code for Bambu Lab printers. Preview, validate, adjust settings, and download.",
   },
 };
 

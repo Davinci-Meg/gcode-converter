@@ -60,6 +60,8 @@ const de: Translations = {
 
   // -- Print Settings --
   print: {
+    printerModel: "Druckermodell",
+    selectPrinter: "Drucker auswählen",
     maxSpeed: "Maximale Druckgeschwindigkeit",
     speedUnit: "mm/s",
     speedHint: "Wendet eine Geschwindigkeitsbegrenzung basierend auf dem Filamenttyp an",
@@ -82,14 +84,14 @@ const de: Translations = {
     reset: "Zur\u00FCcksetzen",
     startPlaceholder: "Standard-Start-G-code wird verwendet\u2026",
     endPlaceholder: "Standard-End-G-code wird verwendet\u2026",
-    hint: "Wenn leer gelassen, wird der Standard-G-code f\u00FCr Bambu Lab A1 verwendet. Benutzerdefinierter G-code \u00FCberschreibt die Standardvorlage.",
+    hint: "Wenn leer gelassen, wird der Standard-G-code des ausgewählten Druckers verwendet. Benutzerdefinierter G-code überschreibt die Standardvorlage.",
   },
 
   // -- Convert / Download --
   convert: {
     converting: "Wird konvertiert\u2026",
     reconvert: "Erneut konvertieren",
-    convertForBambu: "F\u00FCr Bambu A1 konvertieren",
+    convertForBambu: "Für Bambu konvertieren",
     download: "Herunterladen",
   },
 

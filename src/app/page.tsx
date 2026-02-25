@@ -5,6 +5,7 @@ import { SettingsPanel } from "@/components/settings/SettingsPanel";
 import { SafetyWarnings } from "@/components/warnings/SafetyWarnings";
 import { ConvertButton } from "@/components/convert/ConvertButton";
 import { DownloadButton } from "@/components/convert/DownloadButton";
+import { BuyMeCoffeeButton } from "@/components/layout/BuyMeCoffeeButton";
 import { GCodeViewer } from "@/components/preview/GCodeViewer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
             <div className="space-y-3">
               <ConvertButton />
               <DownloadButton />
+              <BuyMeCoffeeButton />
             </div>
           </div>
         </div>

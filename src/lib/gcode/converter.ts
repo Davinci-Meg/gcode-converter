@@ -77,13 +77,14 @@ function processLine(
     }
   }
 
-  // Clamp feed rate (applies regardless of positioning mode)
+  // Apply speed factor then clamp to max (applies regardless of positioning mode)
   const fMatch = F_PARAM_RE.exec(codePart);
   if (fMatch) {
     const originalF = parseFloat(fMatch[1]);
+    const scaledF = originalF * options.speedFactor;
     const maxFeedRate = options.maxSpeed * 60;
-    if (originalF > maxFeedRate) {
-      codePart = replaceParam(codePart, "F", maxFeedRate);
+    if (scaledF !== originalF || scaledF > maxFeedRate) {
+      codePart = replaceParam(codePart, "F", Math.min(scaledF, maxFeedRate));
     }
   }
 

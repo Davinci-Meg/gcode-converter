@@ -65,6 +65,8 @@ const ko: Translations = {
     maxSpeed: "최대 인쇄 속도",
     speedUnit: "mm/s",
     speedHint: "필라멘트 종류에 따른 속도 제한을 적용합니다",
+    speedFactor: "속도 배율",
+    speedFactorHint: "모든 이송 속도에 이 배율을 곱합니다 (100% = 변경 없음)",
     nozzleDiameter: "노즐 직경",
     selectNozzle: "노즐 직경 선택",
     bedOffset: "베드 오프셋",

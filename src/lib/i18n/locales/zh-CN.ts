@@ -65,6 +65,8 @@ const zhCN: Translations = {
     maxSpeed: "最大打印速度",
     speedUnit: "mm/s",
     speedHint: "根据耗材类型应用速度限制",
+    speedFactor: "速度系数",
+    speedFactorHint: "将所有进给速度乘以该系数（100% = 不变）",
     nozzleDiameter: "喷嘴直径",
     selectNozzle: "选择喷嘴直径",
     bedOffset: "热床偏移",

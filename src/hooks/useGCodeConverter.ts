@@ -40,6 +40,7 @@ export function useGCodeConverter() {
         nozzleTemp: settings.nozzleTemp,
         bedTemp: settings.bedTemp,
         maxSpeed: settings.maxSpeed,
+        speedFactor: settings.speedFactor,
         offsetX: settings.offsetX,
         offsetY: settings.offsetY,
         nozzleDiameter: settings.nozzleDiameter,

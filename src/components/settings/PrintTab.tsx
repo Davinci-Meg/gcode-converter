@@ -62,6 +62,7 @@ export function PrintTab() {
   const t = useTranslation();
   const printerId = useSettingsStore((s) => s.printerId);
   const maxSpeed = useSettingsStore((s) => s.maxSpeed);
+  const speedFactor = useSettingsStore((s) => s.speedFactor);
   const nozzleDiameter = useSettingsStore((s) => s.nozzleDiameter);
   const offsetX = useSettingsStore((s) => s.offsetX);
   const offsetY = useSettingsStore((s) => s.offsetY);
@@ -93,6 +94,13 @@ export function PrintTab() {
       if (!isNaN(val)) {
         updateSetting("maxSpeed", Math.min(500, Math.max(50, val)));
       }
+    },
+    [updateSetting]
+  );
+
+  const handleSpeedFactorSlider = useCallback(
+    (value: number[]) => {
+      updateSetting("speedFactor", (value[0] ?? 100) / 100);
     },
     [updateSetting]
   );
@@ -208,6 +216,28 @@ export function PrintTab() {
         />
         <p className="text-muted-foreground text-xs">
           {t.print.speedHint}
+        </p>
+      </div>
+
+      {/* Speed Factor */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <Label htmlFor="speed-factor">{t.print.speedFactor}</Label>
+          <span className="text-foreground text-sm font-semibold tabular-nums">
+            {Math.round(speedFactor * 100)}%
+          </span>
+        </div>
+        <Slider
+          id="speed-factor"
+          value={[Math.round(speedFactor * 100)]}
+          onValueChange={handleSpeedFactorSlider}
+          min={10}
+          max={100}
+          step={5}
+          className="[&_[data-slot=slider-range]]:bg-blue-500 [&_[data-slot=slider-thumb]]:border-blue-500"
+        />
+        <p className="text-muted-foreground text-xs">
+          {t.print.speedFactorHint}
         </p>
       </div>
 

@@ -65,6 +65,8 @@ const es: Translations = {
     maxSpeed: "Velocidad máxima de impresión",
     speedUnit: "mm/s",
     speedHint: "Aplica un límite de velocidad según el tipo de filamento",
+    speedFactor: "Factor de velocidad",
+    speedFactorHint: "Multiplica todas las tasas de avance por este factor (100% = sin cambio)",
     nozzleDiameter: "Diámetro de la boquilla",
     selectNozzle: "Seleccionar diámetro de boquilla",
     bedOffset: "Desplazamiento de la cama",

@@ -65,6 +65,8 @@ const fr: Translations = {
     maxSpeed: "Vitesse d'impression maximale",
     speedUnit: "mm/s",
     speedHint: "Applique une limite de vitesse adaptée au type de filament",
+    speedFactor: "Facteur de vitesse",
+    speedFactorHint: "Multiplie toutes les vitesses d'avance par ce facteur (100% = inchangé)",
     nozzleDiameter: "Diamètre de la buse",
     selectNozzle: "Sélectionnez le diamètre de la buse",
     bedOffset: "Décalage du plateau",

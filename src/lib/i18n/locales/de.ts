@@ -65,6 +65,8 @@ const de: Translations = {
     maxSpeed: "Maximale Druckgeschwindigkeit",
     speedUnit: "mm/s",
     speedHint: "Wendet eine Geschwindigkeitsbegrenzung basierend auf dem Filamenttyp an",
+    speedFactor: "Geschwindigkeitsfaktor",
+    speedFactorHint: "Multipliziert alle Vorschübe mit diesem Faktor (100% = keine Änderung)",
     nozzleDiameter: "D\u00FCsendurchmesser",
     selectNozzle: "D\u00FCsendurchmesser ausw\u00E4hlen",
     bedOffset: "Bett-Offset",

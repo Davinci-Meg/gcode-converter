@@ -63,6 +63,8 @@ const ja = {
     maxSpeed: "最大印刷速度",
     speedUnit: "mm/s",
     speedHint: "フィラメント種類に応じた速度制限を適用します",
+    speedFactor: "速度倍率",
+    speedFactorHint: "全ての移動速度に倍率をかけます（100% = 変更なし）",
     nozzleDiameter: "ノズル径",
     selectNozzle: "ノズル径を選択",
     bedOffset: "ベッドオフセット",

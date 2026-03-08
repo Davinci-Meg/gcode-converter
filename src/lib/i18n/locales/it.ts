@@ -65,6 +65,8 @@ const it: Translations = {
     maxSpeed: "Velocit\u00e0 massima di stampa",
     speedUnit: "mm/s",
     speedHint: "Applica un limite di velocit\u00e0 in base al tipo di filamento",
+    speedFactor: "Fattore di velocit\u00e0",
+    speedFactorHint: "Moltiplica tutte le velocit\u00e0 di avanzamento per questo fattore (100% = nessun cambiamento)",
     nozzleDiameter: "Diametro ugello",
     selectNozzle: "Seleziona diametro ugello",
     bedOffset: "Offset piatto",

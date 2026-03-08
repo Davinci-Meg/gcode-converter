@@ -65,6 +65,8 @@ const en: Translations = {
     maxSpeed: "Max print speed",
     speedUnit: "mm/s",
     speedHint: "Applies a speed limit based on the filament type",
+    speedFactor: "Speed Factor",
+    speedFactorHint: "Multiplies all feed rates by this factor (100% = no change)",
     nozzleDiameter: "Nozzle diameter",
     selectNozzle: "Select nozzle diameter",
     bedOffset: "Bed offset",

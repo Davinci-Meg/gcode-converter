@@ -11,6 +11,8 @@ interface SettingsStore {
   nozzleTemp: number;
   bedTemp: number;
   maxSpeed: number;
+  /** Speed multiplier (0.1–1.0). 1.0 = 100%, 0.8 = 80%, etc. */
+  speedFactor: number;
   nozzleDiameter: number;
   offsetX: number;
   offsetY: number;
@@ -36,6 +38,7 @@ const defaultSettings = {
   nozzleTemp: plaPreset.nozzleTemp,
   bedTemp: plaPreset.bedTemp,
   maxSpeed: plaPreset.maxSpeed,
+  speedFactor: 1.0,
   nozzleDiameter: 0.4,
   offsetX: 0,
   offsetY: 0,

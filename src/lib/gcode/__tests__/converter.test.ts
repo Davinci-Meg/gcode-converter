@@ -8,6 +8,7 @@ function createDefaultOptions(overrides: Partial<ConversionOptions> = {}): Conve
     nozzleTemp: 200,
     bedTemp: 60,
     maxSpeed: 300,
+    speedFactor: 1.0,
     offsetX: 0,
     offsetY: 0,
     nozzleDiameter: 0.4,

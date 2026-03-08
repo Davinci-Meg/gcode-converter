@@ -77,6 +77,8 @@ export interface ConversionOptions {
   nozzleTemp: number;
   bedTemp: number;
   maxSpeed: number;
+  /** Speed multiplier applied to all feed rates. 1.0 = 100% (no change), 0.8 = 80%, etc. */
+  speedFactor: number;
   offsetX: number;
   offsetY: number;
   nozzleDiameter: number;

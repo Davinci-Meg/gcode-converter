@@ -105,6 +105,16 @@ export function PrintTab() {
     [updateSetting]
   );
 
+  const handleSpeedFactorInput = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const val = parseInt(e.target.value, 10);
+      if (!isNaN(val)) {
+        updateSetting("speedFactor", Math.min(100, Math.max(1, val)) / 100);
+      }
+    },
+    [updateSetting]
+  );
+
   const handleNozzleDiameter = useCallback(
     (value: string) => {
       updateSetting("nozzleDiameter", parseFloat(value));
@@ -223,17 +233,27 @@ export function PrintTab() {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <Label htmlFor="speed-factor">{t.print.speedFactor}</Label>
-          <span className="text-foreground text-sm font-semibold tabular-nums">
-            {Math.round(speedFactor * 100)}%
-          </span>
+          <div className="flex items-center gap-2">
+            <Input
+              id="speed-factor"
+              type="number"
+              min={1}
+              max={100}
+              step={1}
+              value={Math.round(speedFactor * 100)}
+              onChange={handleSpeedFactorInput}
+              className="h-8 w-20 text-right"
+            />
+            <span className="text-muted-foreground text-sm">%</span>
+          </div>
         </div>
         <Slider
           id="speed-factor"
           value={[Math.round(speedFactor * 100)]}
           onValueChange={handleSpeedFactorSlider}
-          min={10}
+          min={1}
           max={100}
-          step={5}
+          step={1}
           className="[&_[data-slot=slider-range]]:bg-blue-500 [&_[data-slot=slider-thumb]]:border-blue-500"
         />
         <p className="text-muted-foreground text-xs">
